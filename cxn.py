@@ -2,6 +2,7 @@ import functools
 import requests
 from urllib.parse import urlencode
 
+
 class Connection:
     def __init__(self, token, marker):
         self.token = token
