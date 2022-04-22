@@ -15,7 +15,7 @@ class Connection:
         }
     def get(self, url, params=None):
         full_url = url + '?' + urlencode(params) if params else url
-        r = requests.get(full_url, headers=self.default_headers)
-        return r.json()
+        return requests.get(full_url, headers=self.default_headers)
+        
 
 
