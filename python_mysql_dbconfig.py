@@ -22,29 +22,21 @@ def read_db_config(filename='mysql.env', section='mysql'):
 
     return db
 
-def fetch_sql():
+
+def insert(data):
     try:
       
         dbconfig = read_db_config()
-        conn = MySQLConnection(**dbconfig)
-        cursor = conn.cursor()
-        cursor.execute("SELECT question, name, isCorrect FROM questions q join answers a on q.id = a.questionID")
-
-        row = cursor.fetchone()
-
-        ##for each entry in questions, there is a list of answers. 
-        while row is not None:
-            if row[0] in qaTotal.keys():
-                #question exists
-                qaTotal[row[0]].append({row[1]: row[2]})
-            else:
-                #new question, insert new dictionary entry with answer as list of size 
-                qaTotal[row[0]] = [{row[1]: row[2]}]
-            row = cursor.fetchone()
+        db = MySQLConnection(**dbconfig)
+        cursor = db.cursor()
+        query = 'INSERT INTO prices (origin, destination, price, depart_date) VALUES (%(origin)s, %(destination)s,%(price)s,%(depart_date)s)'
+        cursor.executemany(query, data)
+        db.commit()
 
     except Error as e:
         print(e)
 
     finally:
+        db.close()
         cursor.close()
-        conn.close()
+        
