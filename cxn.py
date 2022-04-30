@@ -1,4 +1,5 @@
 import requests
+import json
 from urllib.parse import urlencode
 
 
@@ -16,6 +17,10 @@ class Connection:
     def get(self, url, params=None):
         full_url = url + '?' + urlencode(params) if params else url
         return requests.get(full_url, headers=self.default_headers)
+    
+    def to_prices(self, response):
+        json_object = json.loads(response.text)
+        return json_object["prices"]
         
 
 
