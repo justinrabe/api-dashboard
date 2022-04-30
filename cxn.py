@@ -1,4 +1,3 @@
-import functools
 import requests
 from urllib.parse import urlencode
 

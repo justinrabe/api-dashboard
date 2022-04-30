@@ -14,5 +14,4 @@ prices = jsonObject["prices"]
 filtered_columns = [{k: v for k, v in d.items() if k == 'price' or k == 'depart_date' or k == 'destination' or k == 'origin'} for d in prices]
 print(filtered_columns)
 
-db = python_mysql_dbconfig.insert(filtered_columns)
-print(db)
+python_mysql_dbconfig.insert(filtered_columns)

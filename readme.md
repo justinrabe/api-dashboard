@@ -23,3 +23,5 @@ Airports:
 Use a dashboard app to display data. What Dashboard Apps do we want to use?
     Tableau
     PowerBI
+
+Apache Airflow to run this daily
