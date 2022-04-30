@@ -24,4 +24,5 @@ Use a dashboard app to display data. What Dashboard Apps do we want to use?
     Tableau
     PowerBI
 
-Apache Airflow to run this daily
+Apache Airflow to run this daily. We want this running every morning.
+Other options are a basic scheduler library, but I want to learn Apache.
