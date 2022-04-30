@@ -12,6 +12,7 @@ class Connection:
             'Content-Type': 'application/json',
             'X-Access-Token': self.token
         }
+    #TODO add gets for airport data, parameterize so that we can change destination and arrival
     def get(self, url, params=None):
         full_url = url + '?' + urlencode(params) if params else url
         return requests.get(full_url, headers=self.default_headers)
