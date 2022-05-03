@@ -39,4 +39,18 @@ def insert(data):
     finally:
         db.close()
         cursor.close()
-        
+
+## TODO: 
+## 1. Look into API to see how to pull location data
+## 2. Isolate what data I care about
+## 3. Insert into SQL
+def insert_location(data):
+    try:
+        dbconfig = read_db_config()
+        db = MySQLConnection(**dbconfig)
+        cursor = db.cursor()
+    except Error as e:
+        print(e)
+    finally:
+        db.close()
+        cursor.close()
