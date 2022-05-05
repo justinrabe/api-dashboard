@@ -5,5 +5,6 @@ CREATE PROCEDURE `pInsertPrices` (
     ,depart_date datetime
     )
 BEGIN
-
+    --IF origin OR destination NOT IN Airports
+    --INSERT NEW AIRPORT
 END

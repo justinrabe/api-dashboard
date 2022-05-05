@@ -44,6 +44,7 @@ def insert(data):
 ## 1. Look into API to see how to pull location data
 ## 2. Isolate what data I care about
 ## 3. Insert into SQL
+## 4. Specific Location data doesn't seem to be available. Might have to query the API and pull unique Airport Codes. If Airport Code DNE, insert.
 def insert_location(data):
     try:
         dbconfig = read_db_config()
