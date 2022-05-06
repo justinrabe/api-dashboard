@@ -5,6 +5,13 @@ CREATE PROCEDURE `pInsertPrices` (
     ,depart_date datetime
     )
 BEGIN
-    --IF origin OR destination NOT IN Airports
+    IF origin NOT IN Airports
+    BEGIN
+        EXEC pInsertAirport(origin)
+    END
+    IF destination NOT IN Airports
+    BEGIN
+        EXEC pInsertAirport(origin)
+    END
     --INSERT NEW AIRPORT
 END
