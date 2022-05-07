@@ -1,6 +1,7 @@
-CREATE PROCEDURE `pInsertPrices` (
-    airport varchar(50)
+CREATE PROCEDURE `pInsertAirport` (
+    location varchar(50)
     )
 BEGIN
-    INSERT INTO 
+    INSERT INTO Airport 
+        location
 END

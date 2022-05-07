@@ -13,5 +13,7 @@ BEGIN
     BEGIN
         EXEC pInsertAirport(origin)
     END
+
+    INSERT INTO Prices (origin, destination, price, depart_date)
     --INSERT NEW AIRPORT
 END
