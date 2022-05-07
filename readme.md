@@ -23,7 +23,7 @@ SQL Stored Procs and table functions:
     Stored proc to insert each of the above schemas, removes redundancies and doesn't insert if record already exists.
     
 Use a dashboard app to display data. What Dashboard Apps do we want to use?
-    Tableau
+    Tableau - trying out 
     PowerBI
 
 Apache Airflow to run this daily. We want this running every morning.
